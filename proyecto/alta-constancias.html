@@ -195,7 +195,7 @@
               
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped text-center">
                   <thead>
                   <tr>
                     <th>Nombre de la actividad</th>
@@ -205,7 +205,65 @@
                   </tr>
                   </thead>
                   <tbody>
+                    <!--
+                  <tr>
+                    <td >Curso de Android</td>
+                    <td>23-12-2020</td>
+                    <td>20</td>
+                    <td>
+                    <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-Actualizar" href="#">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Editar
+                    </a>
+                    <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-default" href="#">
+                        <i class="fas fa-trash">
+                        </i>
+                        Eliminar
+                    </a>
+                    </td>
+                  </tr>
 
+                  <tr>
+                    <td>Curso de React</td>
+                    <td>30-04-2021</td>
+                    <td>20</td>
+                    <td>
+                    <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-Actualizar" href="#">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Editar
+                    </a>
+                    <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-default"  href="#">
+                        <i class="fas fa-trash">
+                        </i>
+                        Eliminar
+                    </a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>Curso de Flutter</td>
+                    <td>16-09-2020</td>
+                    <td>30</td>
+                    <td>
+                      <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="La constancia es valida">
+                        Validada
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>Curso de React Native</td>
+                    <td>13-12-2019</td>
+                    <td>25</td>
+                    <td>
+                      <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="La constancia no especifica horas">
+                        Rechazada
+                      </button>
+                    </td>
+                  </tr>
+                -->
                   </tbody>
                   <tfoot>
                   <tr>
@@ -249,7 +307,7 @@
                               </div>
                             </div>
                           </div>
-                          <!--Calendario-->
+                          <!--CAlendario-->
                           <div class="col-6">
                             <div class="form-group">
                               <label>Fecha de termino:</label>
@@ -318,7 +376,7 @@
                       </div>
                       <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-danger" onclick="actionDelete();">Eliminar</button>
+                        <button type="button" class="btn btn-danger" onclick="actionDelete();">Aceptar</button>
                       </div>
                     </div>
                   </div>
@@ -372,7 +430,7 @@
                           <div class="col-3">
                             <div class="form-group">
                               <label>Horas</label>
-                              <input type="number" class="form-control" id="" value="0" id="horas_update">
+                              <input type="number" class="form-control" value="0" id="horas_update">
                             </div>
                           </div>
                         </div>
@@ -487,11 +545,12 @@
 <script src="js/crud-constancia.js"></script>
 <script>
   $(function () {
-    
+    /*Accion*/
     $(document).ready(function(){
       actionList();  
     });
     
+
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
