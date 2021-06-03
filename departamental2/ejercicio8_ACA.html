@@ -25,7 +25,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-     
+      
     </ul>
 
     <!-- Right navbar links -->
@@ -52,16 +52,12 @@
         </div>
       </li>
 
-      <!-- Messages Dropdown Menu -->
-      
-      <!-- Notifications Dropdown Menu -->
-      
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-     
+
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -157,7 +153,6 @@
                 </a>
               </li>
 
-      
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -192,15 +187,14 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Alta Denominación</h3> 
-                <button type="button" class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#modal-nueva">
+                <h3 class="card-title">Alta Denominación</h3>
+                  <button type="button" class="btn btn-success btn-sm float-right" data-toggle="modal" data-target="#modal-nueva">
                   Nueva denominación
                 </button>
               </div>
-          
-              
               <!-- /.card-header -->
               <div class="card-body">
+
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
@@ -212,12 +206,12 @@
                   </thead>
                   <tbody>
 
-                  <tr>
+                  <!--<tr>
                     <td >Enfasis en la profesion</td>
                     <td>Docencia</td>
-                    <td>1 x 16 horas</td>
+                    <td>1x16 horas</td>
                     <td>
-                    <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-Actualizar" href="#">
+                    <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-editar" href="#">
                         <i class="fas fa-pencil-alt">
                         </i>
                         Editar
@@ -231,11 +225,11 @@
                   </tr>
 
                   <tr>
-                    <td>Complementarias a la informacion</td>
-                    <td>Docencia</td>
-                    <td>1 x 16 horas</td>
+                    <td>Enfasis en la profesion</td>
+                    <td>Trabajo de campo supervisado</td>
+                    <td>1x50 horas</td>
                     <td>
-                    <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-Actualizar" href="#">
+                    <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-editar" href="#">
                         <i class="fas fa-pencil-alt">
                         </i>
                         Editar
@@ -248,29 +242,12 @@
                     </td>
                   </tr>
 
-                  <tr>
-                    <td>Enfasis en la profesion</td>
-                    <td>Trabajo de campo supervisado</td>
-                    <td>1 x 50 horas</td>
-                    <td>
-                    <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-Actualizar" href="#">
-                        <i class="fas fa-pencil-alt">
-                        </i>
-                        Editar
-                    </a>
-                    <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-default"  href="#">
-                        <i class="fas fa-trash">
-                        </i>
-                        Eliminar
-                    </a>
-                    </td>
-                  </tr>
                   <tr>
                     <td>Enfasis en la profesion</td>
                     <td>Independientes</td>
-                    <td>1 x 20 horas</td>
+                    <td>1x20 horas</td>
                     <td>
-                    <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-Actualizar" href="#">
+                    <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-editar" href="#">
                         <i class="fas fa-pencil-alt">
                         </i>
                         Editar
@@ -283,22 +260,32 @@
                     </td>
                   </tr>
 
-                  </tbody>
-                  <tfoot>
                   <tr>
-                    <th>Eje temático</th>
-                    <th>Modalidad</th>
-                    <th>Créditos</th>
-                    <th>Acciones</th>
-                  </tr>
-                  </tfoot>
+                    <td>Complementarias a la formación</td>
+                    <td>Docencia</td>
+                    <td>1x16 horas</td>
+                    <td>
+                    <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-editar" href="#">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Editar
+                    </a>
+                    <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-default"  href="#">
+                        <i class="fas fa-trash">
+                        </i>
+                        Eliminar
+                    </a>
+                    </td>
+                  </tr>  -->                                                    
+
+                  </tbody>
                 </table>
-                <!-- /.Alta denominacion -->
+
                 <div class="modal fade" id="modal-nueva">
-                  <div class="modal-dialog modal-nueva modal-dialog-centered modal-lg">
+                  <div class="modal-dialog modal-lg modal-dialog-centered modal-nueva">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h4 class="modal-title">Alta denominaciones</h4>
+                        <h4 class="modal-title">Alta Denominaciones</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -310,7 +297,7 @@
                           <div class="col-6">
                             <div class="form-group">
                               <label>Eje tematico</label>
-                              <input type="text" class="form-control" id="eje_tematico_create" placeholder="Digite eje tematico">
+                              <input type="text" class="form-control" id="eje_temativo_create"  placeholder="Digite eje tematico">
                             </div>
                           </div>
 
@@ -344,7 +331,7 @@
                             <div class="form-group">
                               <div class="form-group">
                                 <label>Ejemplo de actividades</label>
-                                <textarea class="form-control" rows="3" id="ejemplos_create"placeholder="Digite ejemplo"></textarea>
+                                <textarea class="form-control" rows="3" placeholder="Digite ejemplo" id="ejemplos_create"></textarea>
                               </div>
                             </div>
                           </div>
@@ -354,14 +341,14 @@
 
                       <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-success" onclick="actionCreate();">Guardar</button>
+                        <button type="button" class="btn btn-success" onclick="actionCreate();" >Guardar</button>
                       </div>
                     </div>
                     <!-- /.modal-content -->
                   </div>
                   <!-- /.modal-dialog -->
                 </div>
-                <!-- /.Eliminar denominaciones -->
+                <!--eliminar-->
                 <div class="modal fade" id="modal-default">
                   <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -375,75 +362,76 @@
                         <p>¿Desea eliminar el registro?</p>
                       </div>
                       <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-danger">Eliminar</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" onclick="actionDelete();">Eliminar</button>
                       </div>
                     </div>
+                    <!-- /.modal-content -->
                   </div>
+                  <!-- /.modal-dialog -->
                 </div>
-                <!-- /.Actualizar denominaciones-->
-                    <div class="modal fade" id="modal-Actualizar">
-                      <div class="modal-dialog modal-dialog-centered modal-lg modal-Actualizar">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h4 class="modal-title">Actualizar Denominacion</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
+
+                <div class="modal fade" id="modal-editar">
+                  <div class="modal-dialog modal-lg modal-dialog-centered modal-editar">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Alta Denominaciones</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+
+                      <div class="modal-body">
+                        <div class="row">
+
+                          <div class="col-6">
+                            <div class="form-group">
+                              <label>Eje tematico</label>
+                              <input type="text" class="form-control" id="eje_temativo_actualizar" placeholder="Digite eje tematico">
+                            </div>
                           </div>
-    
-                          <div class="modal-body">
-                            <div class="row">
-    
-                              <div class="col-6">
-                                <div class="form-group">
-                                  <label>Eje tematico</label>
-                                  <input type="text" class="form-control" id="" placeholder=" Inquietudes vocacionales propias">
-                                </div>
-                              </div>
-    
-                              <div class="col-6">
-                                <div class="form-group">
-                                  <label>Modalidad</label>
-                                  <input type="text" class="form-control" id="" placeholder="Docencia">
-                                </div>
-                              </div>
-    
+
+                          <div class="col-6">
+                            <div class="form-group">
+                              <label>Modalidad</label>
+                              <input type="text" class="form-control" id="modalidad_actualizar" placeholder="Digite modalidad">
                             </div>
-    
-                            <div class="row">
-                              <div class="col-6">
-                                <div class="form-group">
-                                  <label>Descripción de créditos</label>
-                                  <input type="text" class="form-control" id=""placeholder="1 crédito por cada 16 horas">
-                                </div>
-                              </div>
-    
-                              <div class="col-6">
-                                <div class="form-group">
-                                  <label>Factor</label>
-                                  <input type="number" class="form-control" id="" value="0">
-                                </div>
-                              </div>
-                            </div>
-                            <!---->
-                            <div class="row">
-                              <div class="col-12">
-                                <div class="form-group">
-                                  <div class="form-group">
-                                    <label>Ejemplo de actividades</label>
-                                    <textarea class="form-control" rows="3" placeholder="Digite ejemplo"></textarea>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-    
                           </div>
-                          <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Actualizar</button>
+
+                        </div>
+
+                        <div class="row">
+                          <div class="col-6">
+                            <div class="form-group">
+                              <label>Descripción de créditos</label>
+                              <input type="text" class="form-control" id="descripcion_actualizar" placeholder="Digite una descripcion">
+                            </div>
+                          </div>
+
+                          <div class="col-6">
+                            <div class="form-group">
+                              <label>Factor</label>
+                              <input type="number" class="form-control" id="factor_actualizar" value="0">
+                            </div>
                           </div>
                         </div>
+                        <!---->
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="form-group">
+                              <div class="form-group">
+                                <label>Ejemplo de actividades</label>
+                                <textarea class="form-control" rows="3" id="ejemplos_actualizar" placeholder="Digite ejemplo"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Calcelar</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal" onclick="actionUpdate()">Actualizar</button>
                       </div>
                     </div>
                     <!-- /.modal-content -->
@@ -458,6 +446,12 @@
           </div>
           <!-- /.col -->
         </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
@@ -499,7 +493,6 @@
 <script src="../plantilla/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- Page specific script -->
 <script src="js/crud-denominacion.js"></script>
-
 <script>
   $(function () {
     $('#summernote').summernote()
@@ -508,18 +501,10 @@
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
-    
-    /*$('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });*/
   });
+  $(document).ready(function(){
+      actionRead();
+    });
 </script>
 </body>
 </html>
