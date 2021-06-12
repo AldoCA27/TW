@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -120,7 +121,6 @@
           <a href="#" class="d-block">Alexander Pierce</a>
         </div>
       </div>
-      
 
       <!-- SidebarSearch Form -->
       <div class="form-inline">
@@ -195,38 +195,45 @@
               <div class="card-header">
                 <h3 class="card-title">Estado de liberación de electivas</h3>
               </div>
-
-              <div class="card-body">
-                <blockquote class="quote-success">
+              <!--Barras de progreso-->
+              <div class="card-body" id="barras">
+                <!--<blockquote class="quote-success" id="bar1">
                   <p>Electiva 1</p>
-                  <div class="progress mb-3">
-                    <div class="progress-bar bg-success"  role="progressbar" aria-valuenow="100" aria-valuemin="100"
-                         aria-valuemax="100" style="width: 100%">
-                      <span class="sr-only">100% Complete (success)</span>
-                      <div >100%</div>
+                  <div class="progress">
+                    <div class="progress-bar bg-success progress-bar-striped" role="progressbar"
+                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                      <span class="sr-only">40% Complete (success)</span>
                     </div>
                   </div>
                 </blockquote>
-                <blockquote class="quote-warning">
+                <blockquote class="quote-warning" id="bar2">
                   <p>Electiva 2</p>
-                  <div class="progress mb-3">
-                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0"
-                         aria-valuemax="100" style="width: 50%">
-                      <span class="sr-only">50% Complete (success)</span>
-                      <div >50%</div>
+                  <div class="progress">
+                    <div class="progress-bar bg-warning progress-bar-striped" role="progressbar"
+                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                      <span class="sr-only">40% Complete (success)</span>
                     </div>
                   </div>
                 </blockquote>
-                <blockquote class="quote-danger">
+                <blockquote class="quote-danger" id="bar3">
                   <p>Electiva 3</p>
-                  <div class="progress mb-3">
-                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0"
-                         aria-valuemax="100" style="width: 0%">
-                      <span class="sr-only">0% Complete (success)</span>
-                      <div >0%</div>
+                  <div class="progress">
+                    <div class="progress-bar bg-danger progress-bar-striped" role="progressbar"
+                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                      <span class="sr-only">40% Complete (success)</span>
                     </div>
                   </div>
-                </blockquote>
+                </blockquote>-->
+                <!--<blockquote class="quote-info" id="bar4">
+                  <p>Electiva 4</p>
+                  <div class="progress">
+                    <div class="progress-bar bg-info progress-bar-striped" role="progressbar"
+                         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                      <span class="sr-only">20% Complete (success)</span>
+                      <div>20%</div>
+                    </div>
+                  </div>
+                </blockquote>-->
               </div>
               
               <!-- /.card-header -->
@@ -244,6 +251,7 @@
                         </a>
                       </h4>
                     </div>
+                    <!--Tabla 1-->
                     <div id="collapseOne" class="collapse" data-parent="#accordion">
                       <div class="card-body">
                             <div class="col-12">
@@ -259,15 +267,15 @@
                                                 <th>Creditos</th>
                                             </tr>
                                         </thead>
-                                          <tbody>
-                                            <tr>
+                                          <tbody id="tabla_ivp">
+                                            <!--<tr>
                                                 <td align="center" valign="middle">Docencia</td>
                                                 <td align="center" valign="middle">
                                                   <div class="row">a)Cursos ofertados en las unidades académicas del IPN</div>
                                                   <div class="row">b)Estudio de una lengua extranjera que no se considere requisito de titulación</div>
                                                 </td>
                                                 <td align="center" valign="middle">1 Crédito par cada 16 horas </td>
-                                            </tr>
+                                            </tr>-->
                                           </tbody>
                                     </table>
                                     <!--</div>-->
@@ -285,9 +293,37 @@
                         </a>
                       </h4>
                     </div>
+                    <!--Tabla 2-->
                     <div id="collapseTwo" class="collapse" data-parent="#accordion">
                       <div class="card-body">
-                        Contenido 2
+                        <div class="col-12">
+                          <div class="card">
+                              
+                          <!-- /.card-header -->
+                              <!--<div class="card-body">-->
+                              <table class="table table-bordered">
+                                  <thead align="center" >
+                                      <tr bgcolor="CCCCCC">
+                                          <th valign="middle">Modalidad</th>
+                                          <th>Ejemplos de actividades</th>
+                                          <th>Creditos</th>
+                                      </tr>
+                                  </thead>
+                                    <tbody id=tabla_ep>
+                                      <!--<tr>
+                                          <td align="center" valign="middle">Docencia</td>
+                                          <td align="center" valign="middle">
+                                            <div class="row">a)Cursos ofertados en las unidades académicas del IPN</div>
+                                            <div class="row">b)Estudio de una lengua extranjera que no se considere requisito de titulación</div>
+                                          </td>
+                                          <td align="center" valign="middle">1 Crédito par cada 16 horas </td>
+                                      </tr>-->
+                                    </tbody>
+                              </table>
+                              <!--</div>-->
+                          <!-- /.card-body -->
+                          </div>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -299,9 +335,37 @@
                         </a>
                       </h4>
                     </div>
+                    <!--Tabla 3-->
                     <div id="collapseThree" class="collapse" data-parent="#accordion">
                       <div class="card-body">
-                        Contenido 3
+                        <div class="col-12">
+                          <div class="card">
+                              
+                          <!-- /.card-header -->
+                              <!--<div class="card-body">-->
+                              <table class="table table-bordered">
+                                  <thead align="center" >
+                                      <tr bgcolor="CCCCCC">
+                                          <th valign="middle">Modalidad</th>
+                                          <th>Ejemplos de actividades</th>
+                                          <th>Creditos</th>
+                                      </tr>
+                                  </thead>
+                                    <tbody id="tabla_cf">
+                                      <!--<tr>
+                                          <td align="center" valign="middle">Docencia</td>
+                                          <td align="center" valign="middle">
+                                            <div class="row">a)Cursos ofertados en las unidades académicas del IPN</div>
+                                            <div class="row">b)Estudio de una lengua extranjera que no se considere requisito de titulación</div>
+                                          </td>
+                                          <td align="center" valign="middle">1 Crédito par cada 16 horas </td>
+                                      </tr>-->
+                                    </tbody>
+                              </table>
+                              <!--</div>-->
+                          <!-- /.card-body -->
+                          </div>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -344,5 +408,16 @@
 <script src="../plantilla/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../plantilla/dist/js/demo.js"></script>
+<!-- Page specific script -->
+  <script src="js/liberacion-electivas.js"></script>
+  <script>
+    $(function () {
+      //Se ejecuta cuando ya se cargaron todos elementos de la página
+      $(document).ready(function(){
+        barraPorcentaje();
+        leerTablas();
+      });
+    });
+  </script>
 </body>
 </html>
