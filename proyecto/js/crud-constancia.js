@@ -1,42 +1,43 @@
 var idSeleccionadoParaEliminar=0;
 var idSeleccionadoParaActualizar=0;
+//Listo
 function actionCreate(){
     var tabla                = $('#example1').DataTable();
-    var nombre_create        = document.getElementById("nombre_create").value;
+    var actividad_create     = document.getElementById("actividad_create").value;
     var fecha_inicio_create  = document.getElementById("fecha_inicio_create").value;
-    var fecha_termino_create = document.getElementById("fecha_termino_create").value;
+    var fecha_fin_create     = document.getElementById("fecha_fin_create").value;
     var horas_create         = document.getElementById("horas_create").value;
     var observaciones_create = document.getElementById("observaciones_create").value;
 
-    
     $.ajax({
         url: "php/crud-constancia.php",
         method: 'POST',
         data:{
-            nombre        : nombre_create,
+            actividad     : actividad_create,
             fecha_inicio  : fecha_inicio_create,
-            fecha_termino : fecha_termino_create,
+            fecha_fin     : fecha_fin_create,
             horas         : horas_create,
             observaciones : observaciones_create,
             accion        : 'Create',
         },
         success: function(resultado){
+            //alert(resultado);
             var objetoJSON=JSON.parse(resultado);
             
             if(objetoJSON.estado==1){
                 var Botones ='<a class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal-Actualizar" onclick="recuperaRegistroActualizar('+constancia.id+');" href="#">';
-                Botones=Botones+' <i class="fas fa-pencil-alt">';
-                Botones=Botones+' </i>';
-                Botones=Botones+' Editar';
-                Botones=Botones+' </a>';
-                Botones=Botones+' <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-default" onclick="identicaEliminar('+constancia.id+');" href="#">';
-                Botones=Botones+' <i class="fas fa-trash">';
-                Botones=Botones+' </i>';
-                Botones=Botones+' Eliminar';
-                Botones=Botones+' </a>';
+                Botones = Botones+' <i class="fas fa-pencil-alt">';
+                Botones = Botones+' </i>';
+                Botones = Botones+' Editar';
+                Botones = Botones+' </a>';
+                Botones = Botones+' <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-default" onclick="identicaEliminar('+constancia.id+');" href="#">';
+                Botones = Botones+' <i class="fas fa-trash">';
+                Botones = Botones+' </i>';
+                Botones = Botones+' Eliminar';
+                Botones = Botones+' </a>';
 
                 tabla.row.add( [
-                    nombre_create,
+                    actividad_create,
                     fecha_inicio_create,
                     horas_create,
                     Botones
@@ -47,10 +48,11 @@ function actionCreate(){
             }else{
                 alert(objetoJSON.mensaje);
             }
-         }
+        }
       });
 }
 
+//Listo
 function actionList(){
     $.ajax({
         url: "php/crud-constancia.php",
@@ -76,7 +78,7 @@ function actionList(){
                     Botones=Botones+' </a>';
 
                     tabla.row.add( [
-                        constancia.nombre,
+                        constancia.actividad,
                         constancia.fecha_inicio,
                         constancia.horas,
                         Botones
@@ -89,11 +91,11 @@ function actionList(){
     });
 
 }
-
+//Listo
 function actionUpdate(){
-    var nombre_update        = document.getElementById("nombre_update").value;
+    var actividad_update     = document.getElementById("actividad_update").value;
     var fecha_inicio_update  = document.getElementById("fecha_inicio_update").value;
-    var fecha_termino_update = document.getElementById("fecha_termino_update").value;
+    var fecha_fin_update     = document.getElementById("fecha_fin_update").value;
     var horas_update         = document.getElementById("horas_update").value;
     var observaciones_update = document.getElementById("observaciones_update").value;
     $.ajax({
@@ -101,34 +103,34 @@ function actionUpdate(){
         method:'POST',
         data: {
             id            : idSeleccionadoParaActualizar,
-            nombre        : nombre_update,
+            actividad     : actividad_update,
             fecha_inicio  : fecha_inicio_update,
-            fecha_termino : fecha_termino_update,
+            fecha_fin     : fecha_fin_update,
             horas         : horas_update,
             observaciones : observaciones_update,
             accion        : 'Update'
         },
         success: function( resultado ) {
-            alert(resultado);
-        var objetoJSON = JSON.parse(resultado);
-        if(objetoJSON.estado==1){
-            alert(objetoJSON.mensaje);
-            $('#modal-editar').modal('hide');
-            var tabla = $('#example1').DataTable();
-            var renglon = tabla.row("#row_"+idSeleccionadoParaActualizar).data();
-            renglon[0]=nombre_update;
-            renglon[1]=fecha_inicio_update;
-            renglon[2]=horas_update;
-            tabla.row("#row_"+idSeleccionadoParaActualizar).data(renglon);
-        }else{
-            alert(objetoJSON.mensaje);
-        }
+            //Actualizar renglon aRREGAL ESTO
+            var objetoJSON = JSON.parse(resultado);
+            if(objetoJSON.estado == 1){
+                alert(objetoJSON.mensaje);
+                $('#modal-Actualizar').modal('hide');
+                var tabla = $('#example1').DataTable();
+                var renglon = tabla.row("#row_"+idSeleccionadoParaActualizar).data();
+                renglon[0] = actividad_update;
+                renglon[1] = fecha_inicio_update;
+                renglon[2] = horas_update;
+                tabla.row("#row_"+idSeleccionadoParaActualizar).data(renglon);
+            }else{
+                alert(objetoJSON.mensaje);
+            }
         }
     });
 }
-
+//Listo
 function recuperaRegistroActualizar(id){
-    alert(id);
+    //alert(id);
     idSeleccionadoParaActualizar=id;
     $.ajax({
         url: "php/crud-constancia.php",
@@ -141,9 +143,9 @@ function recuperaRegistroActualizar(id){
             //alert("Datos: "+resultado);
             var objetoJSON = JSON.parse(resultado);
             if(objetoJSON.estado==1){
-                document.getElementById("nombre_update").value        = objetoJSON.nombre;
+                document.getElementById("actividad_update").value     = objetoJSON.actividad;
                 document.getElementById("fecha_inicio_update").value  = objetoJSON.fecha_inicio;
-                document.getElementById("fecha_termino_update").value = objetoJSON.fecha_termino;
+                document.getElementById("fecha_fin_update").value     = objetoJSON.fecha_fin;
                 document.getElementById("horas_update").value         = objetoJSON.horas;
                 document.getElementById("observaciones_update").value = objetoJSON.observaciones;
             }else{
@@ -152,7 +154,7 @@ function recuperaRegistroActualizar(id){
         }
     });
 }
-
+//Listo
 function actionDelete(){
     $.ajax({
         url: "php/crud-constancia.php",
@@ -175,7 +177,7 @@ function actionDelete(){
         }
     });
 }
-
+//Listo
 function identicaEliminar(id){
     alert("El id para eliminar es:"+id);
     idSeleccionadoParaEliminar=id;
