@@ -2,7 +2,7 @@
     $servidor ="localhost";
     $usuario  = "root";
     $clave    = "";
-    $base     = "electiva";
+    $base     = "electivas";
 
     $acceso = mysqli_connect($servidor,$usuario,$clave,$base);
 

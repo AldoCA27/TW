@@ -23,16 +23,21 @@
             # code...
             break;
     }
+    //Listo
     function accionCrear($acceso){
         $respuesta=array();
 
-        $nombre        = $_POST['nombre'];
+        $actividad     = $_POST['actividad'];
         $fecha_inicio  = $_POST['fecha_inicio'];
-        $fecha_termino = $_POST['fecha_termino'];
+        $fecha_fin     = $_POST['fecha_fin'];
         $horas         = $_POST['horas'];
         $observaciones = $_POST['observaciones'];
-        
-        $Query     = "INSERT INTO constancia (id, nombre, fecha_inicio, fecha_termino, horas, observaciones) VALUES (NULL, '$nombre', '$fecha_inicio', '$fecha_termino', '$horas', '$observaciones');";
+
+        $Query = "INSERT INTO constancia (id, actividad, fecha_inicio, fecha_fin, horas, archivo, observaciones, "; 
+        $Query =$Query."valida, observaciones_encargado, creditos, denominacion_id, alumno_id) VALUES ";
+        $Query =$Query."(NULL, '".$actividad."', '".$fecha_inicio."', '".$fecha_fin."', '".$horas."', '', ";
+        $Query =$Query."'".$observaciones."', '-1', 'Ninguna', '0', '50', '1');";
+        //echo($Query);
         $resultado = mysqli_query($acceso,$Query);
         if($resultado >= 1){
             $respuesta['estado']  = 1;
@@ -47,6 +52,7 @@
         }
         mysqli_close($acceso);
     }
+    //Listo
     function accionEliminar($acceso){
         $respuesta = array();
 
@@ -65,6 +71,7 @@
         echo json_encode($respuesta);
         mysqli_close($acceso);
     }
+    //Listo
     function accionListar($acceso){
         $respuesta = array();
         if (isset($_GET['id'])){
@@ -75,9 +82,9 @@
             if($numero >= 1){
                 $row=mysqli_fetch_array($resultado);
                 $respuesta["id"]            = $row["id"];
-                $respuesta["nombre"]        = $row["nombre"];
+                $respuesta["actividad"]     = $row["actividad"];
                 $respuesta["fecha_inicio"]  = $row["fecha_inicio"];
-                $respuesta["fecha_termino"] = $row["fecha_termino"];
+                $respuesta["fecha_fin"]     = $row["fecha_fin"];
                 $respuesta["horas"]         = $row["horas"];
                 $respuesta["observaciones"] = $row["observaciones"];
                 
@@ -99,9 +106,9 @@
             while($row=mysqli_fetch_array($resultado)){ //Se ejecuta el ciclo el numero de veces = número de registros
                 $rowConstancia=array();
                 $rowConstancia["id"]            = $row["id"];
-                $rowConstancia["nombre"]        =  $row["nombre"];
+                $rowConstancia["actividad"]     =  $row["actividad"];
                 $rowConstancia["fecha_inicio"]  =  $row["fecha_inicio"];
-                $rowConstancia["fecha_termino"] =  $row["fecha_termino"];
+                $rowConstancia["fecha_fin"] =  $row["fecha_fin"];
                 $rowConstancia["horas"]         =  $row["horas"];
                 $rowConstancia["observaciones"] =  $row["observaciones"];
                 array_push($respuesta["constancias"],$rowConstancia);
@@ -116,18 +123,18 @@
     }
     function accionActualizar($acceso){
         $id            = $_POST['id'];
-        $nombre        = $_POST['nombre'];
+        $actividad     = $_POST['actividad'];
         $fecha_inicio  = $_POST['fecha_inicio'];
-        $fecha_termino = $_POST['fecha_termino'];
+        $fecha_fin     = $_POST['fecha_fin'];
         $horas         = $_POST['horas'];
         $observaciones = $_POST['observaciones'];
 
         $Query = "UPDATE constancia ";
-        $Query = $Query."SET nombre='".$nombre."', fecha_inicio='".$fecha_inicio."', fecha_termino='".$fecha_termino."', horas=".$horas.", observaciones='".$observaciones."' ";
+        $Query = $Query."SET actividad='".$actividad."', fecha_inicio='".$fecha_inicio."', fecha_fin='".$fecha_fin."', horas=".$horas.", observaciones='".$observaciones."' ";
         $Query = $Query."WHERE id=".$id;
         $resultado = mysqli_query($acceso,$Query);
         $numero = mysqli_affected_rows($acceso);
-
+        //echo $Query;
         if($numero >= 1){
             $respuesta["estado"]  = 1;
             $respuesta["mensaje"] = "Se actualizo correctamente";
