@@ -32,8 +32,6 @@
   <link rel="stylesheet" href="../plantilla/plugins/bs-stepper/css/bs-stepper.min.css">
   <!-- dropzonejs -->
   <link rel="stylesheet" href="../plantilla/plugins/dropzone/min/dropzone.min.css">
-  <!-- Ekko Lightbox -->
-  <link rel="stylesheet" href="../plugins/ekko-lightbox/ekko-lightbox.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -227,7 +225,7 @@
                   </thead>
                   <tbody>
 
-                  <tr>
+                  <!-- <tr>
                     <td >Sistemas Computacionales</td>
                     <td>Luis Humberto Ruiz</td>
                     <td>Curso de Android</td>
@@ -272,8 +270,17 @@
                       <i class="fas fa-tasks"></i>                 
                     </a>
                     </td>
-                  </tr>
+                  </tr> -->
                   </tbody>
+                  <tfoot>   
+                      <tr>
+                        <th>Programa Académico</th>
+                        <th>Nombre</th>
+                        <th>Actividad</th>
+                        <th>Horas</th>
+                        <th>Acciones</th>
+                      </tr>
+                  </tfoot>
                 </table>
                 <!-- /.Alta denominacion -->
                 
@@ -284,7 +291,7 @@
                       <div class="modal-dialog modal-dialog-centered modal-lg modal-Actualizar">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h4 class="modal-title">Validar Constancia</h4>
+                            <h4 class="modal-title">Validar Constancia de <b><span id="nombre_validar"></span></b></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
@@ -296,7 +303,7 @@
                               <div class="col-12">
                                 <div class="form-group">
                                   <label>Nombre de la Actividad</label>
-                                  <input type="text" class="form-control" id="" placeholder="Curso de Android">
+                                  <input type="text" class="form-control" id="actividad_validar" placeholder="">
                                 </div>
                               </div>
     
@@ -307,7 +314,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                    <input type="text" class="form-control" id="fecha_inicio_validar" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
                                   </div>                           
                                   </div>
                               </div>
@@ -319,7 +326,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                    <input type="text" class="form-control" id="fecha_fin_validar" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
                                   </div>                              
                                 </div>
                               </div>
@@ -327,7 +334,7 @@
                               <div class="col-4">
                                 <div class="form-group">
                                   <label>Horas</label>
-                                  <input type="text" class="form-control" id="" placeholder="20">
+                                  <input type="text" class="form-control" id="horas_validar" placeholder="">
                                 </div>
                               </div>
     
@@ -372,13 +379,11 @@
                                   <label>¿Constancia Valida?</label>
                                     <div class="form-group">
                                       <div class="form-group">
-                                        <select class="form-control" id="select_longitud_1" onchange="cambiaValor();">
+                                        <select class="form-control" id="constancia_valida">
                                           <option value="Seleccionar">Seleccionar</option>
-                                          <option value="Opcion 1">Opcion 1</option>
-                                          <option value="Opcion 2">Opcion 2</option>
-                                          <option value="Opcion 3">Opcion 3</option>
-                                          <option value="Opcion 4">Opcion 4</option>
-                                          <option value="Opcion 5">Opcion 5</option>
+                                          <option value="1">Si</option>
+                                          <option value="0">No</option>
+                                         
                                         </select>
                                       </div>
                                     </div>
@@ -392,7 +397,7 @@
                                       <label>Denominación</label>
                                       <div class="form-group">
                                         <div class="form-group">
-                                          <select class="form-control" id="select_longitud_1" onchange="cambiaValor();">
+                                          <select class="form-control" id="select_longitud_1" >
                                             <option value="Seleccionar">Seleccionar</option>
                                             <option value="Opcion 1">Opcion 1</option>
                                             <option value="Opcion 2">Opcion 2</option>
@@ -411,7 +416,7 @@
                                     <label>Modalidad</label>
                                     <div class="form-group">
                                         <div class="form-group">
-                                          <select class="form-control" id="select_longitud_1" onchange="cambiaValor();">
+                                          <select class="form-control" id="select_longitud_1">
                                             <option value="Seleccionar">Seleccionar</option>
                                             <option value="Opcion 1">Opcion 1</option>
                                             <option value="Opcion 2">Opcion 2</option>
@@ -430,7 +435,7 @@
                                 <div class="form-group">
                                   <div class="form-group">
                                     <label>Observaciones</label>
-                                    <textarea class="form-control" rows="3" placeholder="En caso de que la constancia no sea valida, especifique el motivo"></textarea>
+                                    <textarea class="form-control" rows="3" id="observaciones_encargado" placeholder="En caso de que la constancia no sea válida, especifque el motivo"></textarea>
                                   </div>
                                 </div>
                               </div>
@@ -439,7 +444,7 @@
                           </div>
                           <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-success">Guardar</button>
+                            <button type="button" class="btn btn-success" onclick="accionValidarConstancia();">Guardar</button>
                           </div>
                         </div>
                       </div>
@@ -514,12 +519,9 @@
 <script src="../plantilla/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../plantilla/dist/js/demo.js"></script>
-<!-- Bootstrap -->
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Ekko Lightbox -->
-<script src="../plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
-<!-- Filterizr-->
-<script src="../plugins/filterizr/jquery.filterizr.min.js"></script>
+
+
+<script src="js/validar-constancias.js"></script>
 
 <!-- Page specific script -->
 <script>
@@ -587,103 +589,9 @@
     $('#timepicker').datetimepicker({
       format: 'LT'
     })
-
-    //Bootstrap Duallistbox
-    $('.duallistbox').bootstrapDualListbox()
-
-    //Colorpicker
-    $('.my-colorpicker1').colorpicker()
-    //color picker with addon
-    $('.my-colorpicker2').colorpicker()
-
-    $('.my-colorpicker2').on('colorpickerChange', function(event) {
-      $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
-    })
-
-    $("input[data-bootstrap-switch]").each(function(){
-      $(this).bootstrapSwitch('state', $(this).prop('checked'));
-    })
-
-  })
-  // BS-Stepper Init
-  document.addEventListener('DOMContentLoaded', function () {
-    window.stepper = new Stepper(document.querySelector('.bs-stepper'))
-  })
-
-  // DropzoneJS Demo Code Start
-  Dropzone.autoDiscover = false
-
-  // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
-  var previewNode = document.querySelector("#template")
-  previewNode.id = ""
-  var previewTemplate = previewNode.parentNode.innerHTML
-  previewNode.parentNode.removeChild(previewNode)
-
-  var myDropzone = new Dropzone(document.body, { // Make the whole body a dropzone
-    url: "/target-url", // Set the url
-    thumbnailWidth: 80,
-    thumbnailHeight: 80,
-    parallelUploads: 20,
-    previewTemplate: previewTemplate,
-    autoQueue: false, // Make sure the files aren't queued until manually added
-    previewsContainer: "#previews", // Define the container to display the previews
-    clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
-  })
-
-  myDropzone.on("addedfile", function(file) {
-    // Hookup the start button
-    file.previewElement.querySelector(".start").onclick = function() { myDropzone.enqueueFile(file) }
-  })
-
-  // Update the total progress bar
-  myDropzone.on("totaluploadprogress", function(progress) {
-    document.querySelector("#total-progress .progress-bar").style.width = progress + "%"
-  })
-
-  myDropzone.on("sending", function(file) {
-    // Show the total progress bar when upload starts
-    document.querySelector("#total-progress").style.opacity = "1"
-    // And disable the start button
-    file.previewElement.querySelector(".start").setAttribute("disabled", "disabled")
-  })
-
-  // Hide the total progress bar when nothing's uploading anymore
-  myDropzone.on("queuecomplete", function(progress) {
-    document.querySelector("#total-progress").style.opacity = "0"
-  })
-
-  // Setup the buttons for all transfers
-  // The "add files" button doesn't need to be setup because the config
-  // `clickable` has already been specified.
-  document.querySelector("#actions .start").onclick = function() {
-    myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED))
-  }
-  document.querySelector("#actions .cancel").onclick = function() {
-    myDropzone.removeAllFiles(true)
-  
-    /*$('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });*/
-  }
-  $(function () {
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-      event.preventDefault();
-      $(this).ekkoLightbox({
-        alwaysShowClose: true
-      });
-    });
-
-    $('.filter-container').filterizr({gutterPixels: 3});
-    $('.btn[data-filter]').on('click', function() {
-      $('.btn[data-filter]').removeClass('active');
-      $(this).addClass('active');
-    });
+    $(document).ready(function(){
+      actionRead();
+  });
   })
 </script>
 </body>
