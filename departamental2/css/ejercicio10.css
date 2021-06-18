@@ -1,0 +1,125 @@
+/*Para todas las etiquetas: p, h1, h2, etc*/
+body{
+    margin: 20px;
+}
+
+*{
+    padding: 6px;
+    margin: 0px;
+}
+
+.boton{
+    text-decoration: none;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 10px;
+    color: #ffffff;
+    font-family: 'Lucida Sans';
+}
+.boton-primario{
+    background-color: rgb(0, 123, 255);
+    border-color: rgb(0, 123, 255);
+}
+.boton-secundario{
+    background-color: rgb(108, 117, 125);
+    border-color: rgb(108, 117, 125);
+}
+.boton-default{
+    background-color: rgb(248, 249, 250);
+    border-color: rgb(248, 249, 250);
+    color: #000000;
+}
+.boton-exito{
+    background-color: rgb(40, 167, 69);
+    border-color: rgb(40, 167, 69);
+}
+.boton-informacion{
+    background-color: rgb(23, 162, 184);
+    border-color: rgb(23, 162, 184);
+}
+.boton-peligro{
+    background-color: rgb(220, 53, 69);
+    border-color: rgb(220, 53, 69);
+}
+.boton-precaucion{
+    background-color: rgb(255, 193, 7);
+    border-color: rgb(255, 193, 7);
+    color: #000000;
+}
+/*Para cambiar el color de fondo cuando el mouse pase sobre el boton*/
+.boton-primario:hover{
+    background-color: rgba(0, 123, 255, 0.8);
+}
+.boton-secundario:hover{
+    background-color: rgba(108, 117, 125, 0.8);
+}
+.boton-default:hover{
+    background-color: rgba(248, 249, 250, 0.8);
+}
+.boton-exito:hover{
+    background-color: rgba(40, 167, 69, 0.8);
+}
+.boton-informacion:hover{
+    background-color: rgba(23, 162, 184, 0.8);
+}
+.boton-peligro:hover{
+    background-color: rgba(220, 53, 69, 0.8);
+}
+.boton-precaucion:hover{
+    background-color: rgba(255, 193, 7, 0.8);
+}
+
+h4{
+    margin-bottom: 10px;
+}
+
+/*Mensajes*/
+.div-general{
+    width: 50%;
+    margin-top: 20px;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+}
+
+.div-peligro{
+    background-color: rgb(220, 53, 69); 
+    border-color: rgb(220, 53, 69);
+}
+
+.div-informacion{
+    background-color: rgb(23, 162, 184);
+    border-color: rgb(23, 162, 184);
+}
+
+.div-precaucion{
+    background-color: rgb(255, 193, 7);
+    border-color: rgb(255, 193, 7);
+}
+
+.div-exito{
+    background-color: rgb(40, 167, 69);
+    border-color: rgb(40, 167, 69);
+}
+
+/*Variante con fondo blanco*/
+.div-rojo{
+    display: none;
+    width: 50%;
+    margin-top: 20px;
+    border-style: solid;
+    border-width: 1px;
+    color: #000;
+    border-radius: 5px;
+    padding: 10px;
+    border-left-color: rgb(220, 53, 69);
+    border-left-width: 5px;
+} 
